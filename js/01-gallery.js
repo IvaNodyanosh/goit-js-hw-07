@@ -37,18 +37,21 @@ const onImageClickOpen = function (event) {
   
   instance.show()
 
+  window.addEventListener("keydown", event => onImageClickClose(event))
+
 
 }
 
 const onImageClickClose = function (event) {
-    if (event.code === "Escape") {
-      instance.close()
-    }
+  if (event.code === "Escape") {
+    instance.close()
+    window.removeEventListener("keydown", event => onImageClickClose(event))
+  }
 }
 
-window.addEventListener("keydown", event => onImageClickClose(event))
 
-window.removeEventListener("keydown", event => onImageClickClose(event))
+
+
 
 gallery.addEventListener("click", event => onImageClickOpen(event))
 

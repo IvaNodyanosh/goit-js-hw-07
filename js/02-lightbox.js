@@ -17,18 +17,4 @@ gallery.innerHTML = items;
 
 new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250, });
 
-gallery.addEventListener("click", clickPhoto)
-
-const clickPhoto = function (event) {
-
-    if (!(event.target.nodeName === "IMG")) {
-        return
-    }
-
-    event.preventDefault()
-
-
-
-}
-
 
